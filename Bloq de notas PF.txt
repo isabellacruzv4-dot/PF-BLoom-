@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Bloom Atelier |Beautiful Flowers and more</title>
+
+
+    <style>
+
+
+        /* ==================================================
+           CONFIGURACIÓN GENERAL
+        ================================================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            margin: 0;
+            font-family: "Trebuchet MS" , sans-serif;
+            background-color: #9B7D61;g 
+            color: #292522;
+        }
+
+
+        /* ==================================================
+           ENCABEZADO
+        ================================================== */
+
+        header {
+
+            background-image:
+                linear-gradient(
+                    rgbargba(255, 99, 71, 0.6),
+                    rgbargba(255, 99, 71, 0)
+                ),
+                url("fondo.jpg");
+
+            background-size: cover;
+            background-position: center;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 110px 20px;
+
+        }
+
+
+        header h1 {
+
+            font-size: 52px;
+
+            margin: 0;
+
+            letter-spacing: 5px;
+
+            text-transform: uppercase;
+
+        }
+
+
+        header h1::after {
+
+            content: "";
+
+            display: block;
+
+            width: 70px;
+
+            height: 3px;
+
+            background-color: #cdb8a5;
+
+            margin: 20px auto;
+
+        }
+
+
+        header p {
+
+            font-size: 20px;
+
+            margin: 0;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        /* ==================================================
+           MENÚ
+        ================================================== */
+
+        nav {
+
+            background-color: #DFC49B; 
+
+            text-align: center;
+
+            padding: 18px;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+        }
+
+
+        nav a {
+
+            color: #FFF7E6;
+
+            text-decoration: none;
+
+            margin: 0 18px;
+
+            font-size: 16px;
+
+            transition: color 0.3s;
+
+        }
+
+
+        nav a:hover {
+
+            color: #cdb8a5;
+
+        }
+
+
+        /* ==================================================
+           CONTENEDOR PRINCIPAL
+        ================================================== */
+
+        main {
+
+            width: 90%;
+
+            max-width: 1100px;
+
+            margin: 50px auto;
+
+        }
+
+
+        /* ==================================================
+           SECCIONES
+        ================================================== */
+
+        section {
+
+            background-color: white;
+
+            padding: 45px;
+
+            margin-bottom: 35px;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.08);
+
+        }
+
+
+        h2 {
+
+            color: #292522;
+
+            font-size: 30px;
+
+            margin-top: 0;
+
+            border-left: 5px solid #b9a18e;
+
+            padding-left: 15px;
+
+        }
+
+
+        h3 {
+
+            color: #292522;
+
+        }
+
+
+        p {
+
+            font-size: 17px;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* ==================================================
+           SECCIÓN DESTACADA
+        ================================================== */
+
+        .destacada {
+
+            background-color: #292522;
+
+            color: white;
+
+            text-align: center;
+
+        }
+
+
+        .destacada h2 {
+
+            color: white;
+
+            border-left: none;
+
+            border-bottom: 2px solid #cdb8a5;
+
+            padding-left: 0;
+
+            padding-bottom: 12px;
+
+            display: inline-block;
+
+        }
+
+
+        /* ==================================================
+           BOTONES
+        ================================================== */
+
+        .boton {
+
+            display: inline-block;
+
+            background-color: #292522;
+
+            color: white;
+
+            padding: 13px 28px;
+
+            text-decoration: none;
+
+            border-radius: 6px;
+
+            margin-top: 15px;
+
+            transition:
+                background-color 0.3s,
+                transform 0.3s;
+
+        }
+
+
+        .boton:hover {
+
+            background-color: #8e7968;
+
+            transform: translateY(-2px);
+
+        }
+
+
+        .boton-claro {
+
+            display: inline-block;
+
+            background-color: #cdb8a5;
+
+            color: #292522;
+
+            padding: 13px 28px;
+
+            text-decoration: none;
+
+            border-radius: 6px;
+
+            margin-top: 15px;
+
+            transition: 0.3s;
+
+        }
+
+
+        .boton-claro:hover {
+
+            background-color: white;
+
+            transform: translateY(-2px);
+
+        }
+
+
+        /* ==================================================
+           IMAGEN PRINCIPAL
+        ================================================== */
+
+        .imagen-principal {
+
+            display: block;
+
+            width: 35%;
+
+            max-width: 300px;
+
+            height: auto;
+
+            margin: 30px auto;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 8px 20px rgba(0,0,0,0.20);
+
+            transition:
+                transform 0.3s;
+
+        }
+
+
+        .imagen-principal:hover {
+
+            transform: scale(1.03);
+
+        }
+
+
+        /* ==================================================
+           TARJETAS DE PRODUCTOS
+        ================================================== */
+
+        .productos {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 25px;
+
+            flex-wrap: wrap;
+
+        }
+
+
+        .producto {
+
+            width: 280px;
+
+            background-color: #f4eee8;
+
+            padding: 18px;
+
+            text-align: center;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 4px 12px rgba(0,0,0,0.12);
+
+            transition:
+                transform 0.3s,
+                box-shadow 0.3s;
+
+        }
+
+
+        .producto:hover {
+
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 10px 20px rgba(0,0,0,0.18);
+
+        }
+
+
+        .producto img {
+
+            width: 100%;
+
+            height: 190px;
+
+            object-fit: cover;
+
+            border-radius: 8px;
+
+        }
+
+
+        .producto h3 {
+
+            margin-bottom: 5px;
+
+            font-size: 21px;
+
+        }
+
+
+        .producto p {
+
+            font-size: 15px;
+
+        }
+
+
+        /* ==================================================
+           LISTAS
+        ================================================== */
+
+        ul,
+        ol {
+
+            font-size: 17px;
+
+            line-height: 1.9;
+
+        }
+
+
+        /* ==================================================
+           VIDEO
+        ================================================== */
+
+        .video-contenedor {
+
+            background-color: #f4eee8;
+
+            padding: 25px;
+
+            border-radius: 12px;
+
+            text-align: center;
+
+            margin-top: 25px;
+
+        }
+
+
+        .video-principal {
+
+            display: block;
+
+            width: 60%;
+
+            max-width: 500px;
+
+            height: auto;
+
+            margin: auto;
+
+            border-radius: 8px;
+
+        }
+
+
+        /* ==================================================
+           TABLA
+        ================================================== */
+
+        table {
+
+            width: 90%;
+
+            margin: 25px auto;
+
+            border-collapse: collapse;
+
+            overflow: hidden;
+
+            border-radius: 8px;
+
+        }
+
+
+        th {
+
+            background-color: #292522;
+
+            color: white;
+
+            padding: 14px;
+
+        }
+
+
+        td {
+
+            border: 1px solid #d5c8bd;
+
+            padding: 12px;
+
+            text-align: center;
+
+        }
+
+
+        tr:nth-child(even) {
+
+            background-color: #f4eee8;
+
+        }
+
+
+        tr:hover {
+
+            background-color: #e8ddd4;
+
+        }
+
+
+        /* ==================================================
+           FORMULARIO
+        ================================================== */
+
+        form {
+
+            max-width: 650px;
+
+            margin: auto;
+
+        }
+
+
+        label {
+
+            display: block;
+
+            margin-top: 15px;
+
+            font-weight: bold;
+
+        }
+
+
+        input,
+        select,
+        textarea {
+
+            width: 100%;
+
+            padding: 12px;
+
+            margin-top: 6px;
+
+            border: 1px solid #cdbfb3;
+
+            border-radius: 6px;
+
+            font-family: Arial, sans-serif;
+
+            background-color: #faf8f6;
+
+        }
+
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+
+            outline: none;
+
+            border: 2px solid #8e7968;
+
+        }
+
+
+        textarea {
+
+            resize: vertical;
+
+        }
+
+
+        button {
+
+            background-color: #292522;
+
+            color: white;
+
+            border: none;
+
+            padding: 13px 28px;
+
+            margin-top: 15px;
+
+            border-radius: 6px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+        }
+
+
+        button:hover {
+
+            background-color: #8e7968;
+
+            transform: translateY(-2px);
+
+        }
+
+
+        /* ==================================================
+           PIE DE PÁGINA
+        ================================================== */
+
+        footer {
+
+            background-color: #171514;
+
+            color: #f4eee8;
+
+            text-align: center;
+
+            padding: 35px;
+
+            margin-top: 50px;
+
+        }
+
+
+        footer p {
+
+            margin: 5px;
+
+            font-size: 15px;
+
+        }
+
+
+        /* ==================================================
+           RESPONSIVO
+        ================================================== */
+
+        @media (max-width: 700px) {
+
+
+            header {
+
+                padding: 80px 20px;
+
+            }
+
+
+            header h1 {
+
+                font-size: 35px;
+
+            }
+
+
+            nav a {
+
+                display: block;
+
+                margin: 10px;
+
+            }
+
+
+            main {
+
+                width: 95%;
+
+            }
+
+
+            section {
+
+                padding: 25px;
+
+            }
+
+
+            .imagen-principal {
+
+                width: 70%;
+
+            }
+
+
+            .video-principal {
+
+                width: 100%;
+
+            }
+
+
+            table {
+
+                width: 100%;
+
+            }
+
+
+        }
+
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         ENCABEZADO
+    ================================================== -->
+
+    <header>
+
+        <h1>Bloom Atelier</h1>
+
+        <p>
+    Cada flor cuenta una historia
+       </p>
+
+    </header>
+
+
+
+    <!-- ==================================================
+         MENÚ
+    ================================================== -->
+
+    <nav>
+
+        <a href="#inicio">Inicio</a>
+
+        <a href="#productos">Productos</a>
+
+        <a href="#proceso">Proceso de los arreglos</a>
+
+        <a href="#precios">Precios</a>
+
+        <a href="#contacto">Contacto</a>
+
+    </nav>
+
+
+
+    <main>
+
+
+        <!-- ==================================================
+             INICIO
+        ================================================== -->
+
+        <section id="inicio">
+
+            <h2>Welcome</h2>
+
+            <p>
+
+                Bienvenidos a
+                <strong>Bloom Atelier</strong>,
+                Donde cada flor cuenta una historia y cada detalle transmite una emoci&oacute;n. Descubre la belleza de las flores, crea momentos inolvidables y encuentra el arreglo perfecto para expresar lo que las palabras no siempre pueden decir.
+            </p>
+
+
+            <img
+                src="Flor 1.jpg"
+                alt="Pastel de Dulce Momento"
+                class="imagen-principal"
+            >
+
+           <div style="text-align: center;">
+
+            <p>
+
+        
+            </p>
+
+
+            <a
+                href="#productos"
+                class="boton"
+            >
+
+                Ver productos
+
+            </a>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             PROPÓSITO
+        ================================================== -->
+
+        <section class="destacada">
+
+            <h2>A magical moment</h2>
+
+            <p>
+
+                En Bloom Atelier tenemos en cuenta las flores son grandes piezas de amor y paz que pueden convertirse en parte de un recuerdo
+                especial.
+
+            </p>
+
+
+            <a
+                href="#contacto"
+                class="boton-claro"
+            >
+
+                Make a question 
+            </a>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             PRODUCTOS
+        ================================================== -->
+
+        <section id="productos">
+
+            <h2>Nuestros Bloom Buquets</h2> 
+
+            <p>
+
+           Conoce algunas de las bellas flores que ofrecemos.
+
+            </p>
+
+
+            <div class="productos">
+
+
+                <div class="producto">
+
+                    <img
+                        src="Flor 2.jpg" 
+                        alt="Pastel personalizado"
+                    >
+
+                    <h3>Happy Sunset</h3>
+
+                    <p>
+
+                         Cada flor ha sido seleccionada cuidadosamente para transmitir amor, ternura y sofisticación.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="producto">
+
+                    <img
+                        src="Flor 3.jpg"
+                        alt="Cupcakes decorados"
+                    >
+
+                    <h3>Pink Dreams<h3> 
+
+                    <p>
+
+                        Un hermoso ramo de rosas rosadas y flores blancas, acompañado de delicado follaje verde y envuelto en papel decorativo color crema.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="producto">
+
+                    <img
+                        src="Flor 4.jpg"
+                        alt="Postres para tus momentos mas memorables"
+                    >
+
+                    <h3>Reece Sweetheart</h3> 
+
+                    <p>
+
+                       Su diseño transmite tranquilidad, armonía y sofisticación. Es ideal para sorprender a alguien especial, celebrar momentos importantes o decorar espacios con un toque de frescura y distinción.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             LISTAS
+        ================================================== -->
+
+        <section>
+
+            <h2>¿What we can get for you?</h2>
+
+
+            <p>
+
+                Algunas de nuestras especialidades son:
+
+            </p>
+
+
+            <ul>
+
+                <li>Buquets personalizados</li> 
+
+                <li>Rosas de diferentes colores</li>
+
+                <li>Lilys en tonalidades pastel</li>
+
+                <li>Peonias blancas</li> 
+
+            </ul>
+
+
+            <h3>The beautiful process</h3> 
+
+
+            <ol>
+
+                <li>Seleccionar el modelo de buquet especial para ti.</li>
+
+                <li>Elegir tu flor favorita.</li>
+
+                <li>Realizar el pedido.</li>
+
+                <li>Confirmar la fecha de entrega y detalles del modelo.</li> 
+
+            </ol>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             VIDEO
+        ================================================== -->
+
+        <section id="proceso">
+
+            <h2>Our proces for Floral Friday</h2>
+
+
+            <p>
+
+                Conoce parte del proceso de elaboraci&oacute;n
+                de nuestros arreglos florales.
+
+            </p>
+
+
+            <div class="video-contenedor">
+
+                <video
+                    class="video-principal"
+                    controls
+                >
+
+                    <source
+                        src="Video Flor.mp4"
+                        type="video/mp4"
+                    >
+
+                    Tu navegador no puede reproducir este video.
+
+                </video>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             TABLA
+        ================================================== -->
+
+        <section id="precios">
+
+            <h2>Productos y precios</h2>
+
+
+            <table>
+
+                <tr>
+
+                    <th>Producto</th>
+
+                    <th>Descripci&oacute;n</th>
+
+                    <th>Precio</th>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>Arreglo con tres tios de flor</td>
+
+                    <td>personalizado</td>
+
+                    <td>$1200</td> 
+
+                </tr>
+
+
+                <tr>
+
+                    <td>Flores fuera de temporada</td>
+
+                    <td>Buquet</td>
+
+                    <td>$1300</td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>Flores sueltas</td>
+
+                    <td>Especiales o de la temporada</td>
+
+                    <td>$150</td> 
+
+                </tr>
+
+            </table>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             HIPERVÍNCULO
+        ================================================== -->
+
+        <section>
+
+            <h2>M&aacute;s informaci&oacute;n</h2>
+
+
+            <p>
+
+                Puedes consultar informaci&oacute;n adicional
+                en el siguiente sitio:
+
+            </p>
+
+
+            <a
+                href="https://www.example.com"
+                target="_blank"
+                class="boton"
+            >
+
+                See more details 
+
+            </a>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             FORMULARIO
+        ================================================== -->
+
+        <section id="contacto">
+
+            <h2>Cont&aacute;ctanos</h2>
+
+
+            <form>
+
+
+                <label>
+                    Nombre:
+                </label>
+
+
+                <input
+                    type="text"
+                    name="nombre"
+                    placeholder="Escribe tu nombre"
+                >
+
+
+
+                <label>
+                    Correo electr&oacute;nico:
+                </label>
+
+
+                <input
+                    type="email"
+                    name="correo"
+                    placeholder="ejemplo@correo.com"
+                >
+
+
+
+                <label>
+                    Producto de inter&eacute;s:
+                </label>
+
+
+                <select name="producto">
+
+                    <option>Buquet</option>
+
+                    <option>Modelo Reece Sweetheart</option>
+
+                    <option>Peonias Blancas</option>
+
+                    <option>Rosas Rojas</option> 
+
+                </select>
+
+
+
+                <label>
+                    Mensaje:
+                </label>
+
+
+                <textarea
+                    name="mensaje"
+                    rows="5"
+                    placeholder="Escribe tu modelo o flor favorita" 
+                ></textarea>
+
+
+
+                <button type="submit">
+
+                   Go to check 
+
+                </button>
+
+
+            </form>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ==================================================
+         PIE DE PÁGINA
+    ================================================== -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 Bloom Atelier
+        </p>
+
+        <p>
+            Postres y pasteles para momentos especiales
+        </p>
+ <p> Isabella Cruz Vela</p>
+<p> Paginas Web Producto Final </p> 
+
+    </footer>
+
+
+</body>
+
+</html>
